@@ -1,0 +1,59 @@
+
+HTML
+<section>
+			<div class="conenedor1">
+				<div class="tarjeta1">
+					<h2 class="canal">Mi Titulo</h2>
+				</div>
+			</div>
+		</section>
+
+CSS
+.contenedor1{
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.tarjeta1{
+	height: 250px;
+	width: 200px;
+	background-color: blue;
+	border-radius:10%;
+	/*box-shadow: 8px 8px 12px white;*/
+	position:relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+.tarjeta1::before{
+	content: "";
+	position:absolute;
+	height: 300px;
+	width: 300px;
+	background-image: conic-gradient(red 20deg, green 60deg, transparent 120deg);
+	animation: rotar 1s linear infinite;
+
+}
+
+@keyframes rotar{
+	from{transform: rotate(0deg);}
+	to{transform: rotate(-360deg);}
+}
+
+.tarjeta1::after{
+	content: "";
+	position:absolute;
+	height: 240px;
+	width: 190px;
+	background: blue;
+	border-radius: 10%;
+}
+.canal{
+	color: red;
+	z-index:2;
+}

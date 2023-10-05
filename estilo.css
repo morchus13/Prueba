@@ -1,0 +1,51 @@
+body{
+	margin:0;
+	padding: 0;
+	/*background-color: black;*/
+}
+
+/***********************ACA LO PUEDO ACOMODOAR DONDE QUIERO********************/
+.contenedor{
+	background: red;
+	width: 500px;
+	height: 300px;
+	opacity: .9;
+	margin:30px;
+	display: inline;
+	margin-left: auto;
+	margin-right: auto;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+.block{
+	position:relative;
+	top:0px;
+	left:0px;
+	width: 50%;
+	height: 200px;
+	background: linear-gradient(0deg, black, green);
+}
+.glow::before, .glow::after{
+	content: "";
+	position:absolute;
+	top:-2px;
+	left:-2px;
+	background: linear-gradient(45deg, red, black, white, blue, yellow, orange, green, violet);
+	background-size: 400%;
+	width: calc(100% + 5px);
+	height: calc(100% + 5px);
+	z-index: -1;
+	animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+	0%{background-position: 0 0;}
+	50%{background-position: 300% 0;}
+	100%{background-position: 0 0;}
+}
+.glow::after{
+	filter: blur(30px);
+	opacity: 0.9;
+}
+
